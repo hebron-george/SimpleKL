@@ -6,16 +6,12 @@
 
 	"permissions": [
 		"http://*/*",
-		"https://*/*"
+		"https://*/*",
+		"tabs"
 	],
-	"background": {
-    	"scripts": ["myscript.js"]
-  	},
   	"content_scripts": [{
-	    "matches": ["*://*/*"],
-	    "js": ["myscript.js"]
-  	}],
-  	"externally_connectable": {
-  		"matches": ["*://*.castlequest.be/*"]
-	}
+	    "matches": ["<all_urls>"],
+	    "js": ["myscript.js"],
+	    "run_at": "document_end"
+  	}]
 }
