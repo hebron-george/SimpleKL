@@ -1,10 +1,11 @@
 var input = '';
-$(document).keypress(function(event){
-  //alert('Key pressed: ' + event.which);
-  if (event.which == 13){
+$(document).keydown(function(e){ 
+  if (e.which == 13){
     alert(input);
     input = '';
+  } else if (e.which === 9){
+    input += '|';
   } else {
-    input += String.fromCharCode(event.which);
+    input += String.fromCharCode(e.which);
   }
 });
